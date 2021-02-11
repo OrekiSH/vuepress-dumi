@@ -1,0 +1,45 @@
+.custom-block
+  box-shadow 0 6px 16px -2px rgba(0, 0, 0, 0.06)
+  .custom-block-title
+    font-weight 600
+    margin-bottom -0.4rem
+  &.tip, &.warning, &.danger
+    padding .1rem 1.5rem
+    border-left-width .5rem
+    border-left-style solid
+    margin 1rem 0
+  &.tip
+    border-color #8cd225
+    background-color #f3f5f7
+  &.warning
+    background-color rgba(255,229,100,.3)
+    border-color darken(#ffc121, 35%)
+    color darken(#ffc121, 70%)
+    .custom-block-title
+      color darken(#ffc121, 50%)
+    a
+      color $textColor
+  &.danger
+    background-color #ffe6e6
+    border-color darken(#ff4646, 20%)
+    color darken(#ff4646, 70%)
+    .custom-block-title
+      color darken(#ff4646, 40%)
+    a
+      color $textColor
+  &.details
+    display block
+    position relative
+    border-radius 2px
+    margin 1.6em 0
+    padding 1.6em
+    background-color #eee
+    h4
+      margin-top 0
+    figure, p
+      &:last-child
+        margin-bottom 0
+        padding-bottom 0
+    summary
+      outline none
+      cursor pointer
