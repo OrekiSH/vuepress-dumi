@@ -22,6 +22,6 @@ Write vuepress config
 ```js
 // .vuepress/config.js
 module.exports = {
-  theme: ['@vuepress-dumi/dumi'],
+  theme: '@vuepress-dumi/dumi',
 }
 ```

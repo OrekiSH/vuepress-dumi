@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-dumi/vuepress-plugin-dumi-previewer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A dumi style code previewer plugin for VuePress.",
   "keywords": [
     "vue",
@@ -15,9 +15,6 @@
   "homepage": "https://github.com/OrekiSH/vuepress-dumi",
   "license": "MIT",
   "main": "src/index.js",
-  "files": [
-    "lib"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OrekiSH/vuepress-dumi.git"

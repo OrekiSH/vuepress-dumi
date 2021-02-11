@@ -23,6 +23,6 @@ $ yarn add -D @vuepress-dumi/vuepress-theme-dumi
 ```js
 // .vuepress/config.js
 module.exports = {
-  theme: ['@vuepress-dumi/dumi'],
+  theme: '@vuepress-dumi/dumi',
 }
 ```

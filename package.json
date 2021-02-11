@@ -1,6 +1,9 @@
 {
-  "name": "root",
   "private": true,
+  "version": "0.2.0",
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "eslint": "^7.19.0",
     "eslint-config-standard": "^16.0.2",

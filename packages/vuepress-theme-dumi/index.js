@@ -53,7 +53,8 @@ module.exports = (options, ctx) => {
         before: info => `<details class="custom-block details">${info ? `<summary>${info}</summary>` : ''}\n`,
         after: () => '</details>\n'
       }],
-      ['smooth-scroll', enableSmoothScroll]
+      ['smooth-scroll', enableSmoothScroll],
+      '@vuepress-dumi/dumi-previewer',
     ]
   }
 }
