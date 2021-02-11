@@ -42,8 +42,8 @@
 </template>
 
 <script>
-import highlight from '@vuepress/markdown/lib/highlight'
 import copy from 'copy-to-clipboard'
+import highlight from './highlight'
 
 export default {
   name: 'dumi-previewer',
