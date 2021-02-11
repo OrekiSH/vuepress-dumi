@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-dumi/vuepress-theme-dumi",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "📖 A dumi style theme for VuePress.",
   "keywords": [
     "vue",
@@ -21,6 +21,6 @@
     "url": "https://github.com/OrekiSH/vuepress-dumi/issues"
   },
   "dependencies": {
-    "@vuepress-dumi/vuepress-plugin-dumi-previewer": "^0.2.0"
+    "@vuepress-dumi/vuepress-plugin-dumi-previewer": "latest"
   }
 }
