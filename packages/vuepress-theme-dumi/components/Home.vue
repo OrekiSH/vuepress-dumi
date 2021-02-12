@@ -49,7 +49,7 @@
       </div>
     </div>
 
-    <Content class="theme-default-content custom" />
+    <Content class="theme-dumi-content custom" />
 
     <div
       v-if="data.footer"

@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-dumi/vuepress-theme-dumi",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "📖 A dumi style theme for VuePress.",
   "keywords": [
     "vue",

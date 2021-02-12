@@ -97,7 +97,7 @@ kbd
   border-radius 0.15rem
   padding 0 0.15em
 
-blockquote
+blockquote:not([class])
   font-size 1rem
   color #999;
   border-left .2rem solid #dfe2e5
@@ -107,7 +107,7 @@ blockquote
   & > p
     margin 0
 
-ul, ol
+ul:not([class]), ol:not([class])
   padding-left 1.2em
 
 strong
@@ -133,15 +133,15 @@ h1, h2, h3, h4, h5, h6
   &:hover .header-anchor
     opacity: 1
 
-h1
+h1:not([class])
   font-size 2.2rem
 
-h2
+h2:not([class])
   font-size 1.65rem
   padding-bottom .3rem
   border-bottom 1px solid $borderColor
 
-h3
+h3:not([class])
   font-size 1.35rem
 
 a.header-anchor
@@ -156,31 +156,31 @@ a.header-anchor
   &:hover
     text-decoration none
 
-code, kbd, .line-number
+code:not([class]), kbd:not([class]), .line-number
   font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
 
-p, ul, ol
+p:not([class]), ul:not([class]), ol:not([class])
   line-height 1.7
 
-hr
+hr:not([class])
   border 0
   border-top 1px solid $borderColor
 
-table
-  border-collapse collapse
-  margin 1rem 0
-  display: block
-  overflow-x: auto
+{$contentClass}
+  table:not([class])
+    border-collapse collapse
+    margin 1rem 0
+    display block
+    overflow-x auto
 
-tr
-  border-top 1px solid #dfe2e5
+  tr:not([class])
+    border-top 1px solid #dfe2e5
+    &:nth-child(2n)
+      background-color #f6f8fa
 
-  &:nth-child(2n)
-    background-color #f6f8fa
-
-th, td
-  border 1px solid #dfe2e5
-  padding .6em 1em
+  th:not([class]), td:not([class])
+    border 1px solid #dfe2e5
+    padding .6em 1em
 
 .theme-container
   &.sidebar-open

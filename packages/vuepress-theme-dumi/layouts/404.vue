@@ -1,6 +1,6 @@
 <template>
   <div class="theme-container">
-    <div class="theme-default-content">
+    <div class="theme-dumi-content">
       <h1>404</h1>
 
       <blockquote>{{ getMsg() }}</blockquote>
