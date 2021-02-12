@@ -26,3 +26,17 @@ module.exports = {
   theme: '@vuepress-dumi/dumi',
 }
 ```
+
+## 预览
+
+![PC模式](https://s3.ax1x.com/2021/02/12/yDNldg.png)
+![手机模式](https://s3.ax1x.com/2021/02/12/yDUi60.png)
+![代码预览](https://s3.ax1x.com/2021/02/12/yDNgQx.png)
+
+💡注意: 如果你需要引入element-ui, 则需要指定async-validator的版本:
+
+``` bash
+$ npm i -D async-validator@1.11.5
+# OR
+$ yarn add -D async-validator@1.11.5
+```

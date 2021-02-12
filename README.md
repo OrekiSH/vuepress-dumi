@@ -25,3 +25,17 @@ module.exports = {
   theme: '@vuepress-dumi/dumi',
 }
 ```
+
+## Preview
+
+![pc mode](https://s3.ax1x.com/2021/02/12/yDNldg.png)
+![mobile mode](https://s3.ax1x.com/2021/02/12/yDUi60.png)
+![code previewer](https://s3.ax1x.com/2021/02/12/yDNgQx.png)
+
+💡attention: if you want to import element-ui like me, you need install async-validator@1.11.5
+
+``` bash
+$ npm i -D async-validator@1.11.5
+# OR
+$ yarn add -D async-validator@1.11.5
+```
