@@ -1,6 +1,6 @@
 <h1 align="center">vuepress-plugin-dumi-previewer</h1>
 
-<a href="https://github.com/OrekiSH/vuepress-dumi/blob/main/packages/vuepress-plugin-dumi-previewer/README.md">English</a> | 简体中文
+English | <a href="https://github.com/OrekiSH/vuepress-dumi/blob/main/packages/vuepress-plugin-dumi-previewer/README-zh_CN.md">简体中文</a>
 
 💡attention: whitespace is in need before `demo`
 
@@ -40,6 +40,18 @@ Write vuepress config
 module.exports = {
   plugins: ['@vuepress-dumi/dumi-previewer'],
 }
+```
+
+## Preview
+
+![code previewer](https://s3.ax1x.com/2021/02/12/yDNgQx.png)
+
+💡attention: if you want to import element-ui like me, you need install async-validator@1.11.5
+
+``` bash
+$ npm i -D async-validator@1.11.5
+# OR
+$ yarn add -D async-validator@1.11.5
 ```
 
 ## Thanks

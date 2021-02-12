@@ -1,6 +1,6 @@
 <h1 align="center">vuepress-plugin-dumi-previewer</h1>
 
-English | <a href="https://github.com/OrekiSH/vuepress-dumi/blob/main/packages/vuepress-plugin-dumi-previewer/README-zh_CN.md">简体中文</a>
+<a href="https://github.com/OrekiSH/vuepress-dumi/blob/main/packages/vuepress-plugin-dumi-previewer/README.md">English</a> | 简体中文
 
 💡注意: `demo`之前的空格是必需的
 
@@ -41,6 +41,18 @@ $ yarn add -D @vuepress-dumi/vuepress-plugin-dumi-previewer
 module.exports = {
   plugins: ['@vuepress-dumi/dumi-previewer'],
 }
+```
+
+## 预览
+
+![代码预览](https://s3.ax1x.com/2021/02/12/yDNgQx.png)
+
+💡注意: 如果你需要引入element-ui, 则需要指定async-validator的版本:
+
+``` bash
+$ npm i -D async-validator@1.11.5
+# OR
+$ yarn add -D async-validator@1.11.5
 ```
 
 ## 致谢
