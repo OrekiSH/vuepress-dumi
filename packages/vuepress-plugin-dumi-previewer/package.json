@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-dumi/vuepress-plugin-dumi-previewer",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "A dumi style code previewer plugin for VuePress.",
   "keywords": [
     "vue",
@@ -17,7 +17,11 @@
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OrekiSH/vuepress-dumi.git"
+    "url": "git+https://github.com/OrekiSH/vuepress-dumi.git",
+    "directory": "packages/vuepress-plugin-dumi-previewer"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "bugs": {
     "url": "https://github.com/OrekiSH/vuepress-dumi/issues"

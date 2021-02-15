@@ -139,7 +139,7 @@ h1:not([class])
 h2:not([class])
   font-size 1.65rem
   padding-bottom .3rem
-  border-bottom 1px solid $borderColor
+  margin-bottom: .5rem
 
 h3:not([class])
   font-size 1.35rem
@@ -172,15 +172,19 @@ hr:not([class])
     margin 1rem 0
     display block
     overflow-x auto
+    color: #454d64
 
   tr:not([class])
-    border-top 1px solid #dfe2e5
-    &:nth-child(2n)
-      background-color #f6f8fa
+    border-top 1px solid #ebedf1
+
+  th:not([class])
+    background: #f9fafb
+    font-weight: 500
+    text-align: left
 
   th:not([class]), td:not([class])
-    border 1px solid #dfe2e5
-    padding .6em 1em
+    border 1px solid #ebedf1
+    padding 10px 24px
 
 .theme-container
   &.sidebar-open

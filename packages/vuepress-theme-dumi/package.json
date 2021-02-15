@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-dumi/vuepress-theme-dumi",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "📖 A dumi style theme for VuePress.",
   "keywords": [
     "vue",
@@ -15,7 +15,11 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OrekiSH/vuepress-dumi.git"
+    "url": "git+https://github.com/OrekiSH/vuepress-dumi.git",
+    "directory": "packages/vuepress-theme-dumi"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "bugs": {
     "url": "https://github.com/OrekiSH/vuepress-dumi/issues"
