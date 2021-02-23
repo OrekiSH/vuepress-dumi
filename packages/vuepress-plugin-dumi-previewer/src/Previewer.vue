@@ -1,10 +1,11 @@
 <template>
   <section class="dumi-previewer">
     <div class="dumi-previewer-demo">
-      <component :is="demo" />
+      <template v-if="scope">
+        <component :is="demo" />
+      </template>
 
-      <!-- if not Vue SFC, rollback to VuePress render, 如果不是SFC回退到VuePress渲染 -->
-      <template v-if="!demo">
+      <template v-else>
         <slot name="demo"></slot>
       </template>
     </div>
@@ -61,6 +62,11 @@ export default {
     code: {
       type: String,
       default: ''
+    },
+
+    scope: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -74,7 +80,7 @@ export default {
        * take over VuePress render
        * 接管VuePress渲染
       */
-      demo: null,
+      demo: null
     }
   },
 
@@ -88,7 +94,7 @@ export default {
     }
   },
 
-  created() {
+  created () {
     if (this.decodedCode) {
       const code = this.decodedCode
       const scriptBlock = code.match(scriptBlockReg)
@@ -105,10 +111,11 @@ export default {
        * 提取data/methods等选项
        */
       const optionString = scriptBlock[1].trim().replace('export default ', '')
-      let option = null
+      const option = null
+      // eslint-disable-next-line
       eval(`option = ${optionString}`)
 
-      if (!this.$root.constructor) return;
+      if (!this.$root.constructor) return
 
       /**
        * generate render function
@@ -118,8 +125,9 @@ export default {
 
       const demoComponent = this.$root.constructor.component('demo', {
         ...option,
-        render: new Function(renderFunc),
-      });
+        // eslint-disable-next-line
+        render: new Function(renderFunc)
+      })
       this.demo = demoComponent
       this.$options.components.demo = demoComponent
     }

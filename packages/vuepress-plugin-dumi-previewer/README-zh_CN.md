@@ -20,6 +20,42 @@ export default {
 :::
 ```
 
+如果你需要将代码限制在当前代码块的作用域内, 可以使用`demo[scope]`
+
+💡注意: `<template></template>`标签是必需的, 并且你不能在scope模式下使用`import`语句.
+
+```md
+::: demo[scope]
+<template>
+  <div>{{ foo }}</div>
+</template>
+
+<script>
+export default {
+  data() {
+    return { foo: 'foo' }
+  }
+}
+</script>
+:::
+```
+
+```md
+::: demo[scope]
+<template>
+  <div>{{ foo }}</div>
+</template>
+
+<script>
+export default {
+  data() {
+    return { foo: 'bar' }
+  }
+}
+</script>
+:::
+```
+
 ## 安装
 
 * 首先安装 [VuePress v1.x](https://github.com/vuejs/vuepress)

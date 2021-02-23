@@ -20,6 +20,42 @@ export default {
 :::
 ```
 
+If you need code scope, you can use `demo[scope]`.
+
+💡attention: `<template></template>` is in need, and you can not use `import` statment in scope mode.
+
+```md
+::: demo[scope]
+<template>
+  <div>{{ foo }}</div>
+</template>
+
+<script>
+export default {
+  data() {
+    return { foo: 'foo' }
+  }
+}
+</script>
+:::
+```
+
+```md
+::: demo[scope]
+<template>
+  <div>{{ foo }}</div>
+</template>
+
+<script>
+export default {
+  data() {
+    return { foo: 'bar' }
+  }
+}
+</script>
+:::
+```
+
 ## Install
 
 * First of all, install [vuepress v1.x](https://github.com/vuejs/vuepress)

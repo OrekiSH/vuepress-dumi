@@ -1,10 +1,9 @@
 const markdownItContainer = require('markdown-it-container')
 
 module.exports = (options = {}) => {
-  const { marker = 'demo' } = options
-  const END_TYPE = `container_${marker}_close`
+  const { marker = 'demo', scopeMaker = 'demo[scope]' } = options
 
-  function render (tokens, idx) {
+  function render (tokens, idx, endType, scope) {
     const { nesting } = tokens[idx]
 
     if (nesting === -1) {
@@ -17,7 +16,7 @@ module.exports = (options = {}) => {
     for (let index = idx; index < tokens.length; index++) {
       const { map, type, content } = tokens[index]
 
-      if (type === END_TYPE) break
+      if (type === endType) break
 
       // add empty lines
       if (map) {
@@ -35,10 +34,19 @@ module.exports = (options = {}) => {
 
     return `
       <Previewer
+        :scope="${scope}"
         code="${encodeURIComponent(htmlStr)}"
       >
         <template slot="demo">
     `
+  }
+
+  function slotRender (tokens, index) {
+    return render(tokens, index, `container_${marker}_close`, false)
+  }
+
+  function scopeRender (tokens, index) {
+    return render(tokens, index, `container_${scopeMaker}_close`, true)
   }
 
   return {
@@ -47,7 +55,8 @@ module.exports = (options = {}) => {
       require.resolve('./enhanceAppFile.js')
     ],
     extendMarkdown: (md) => {
-      md.use(markdownItContainer, marker, { render })
+      md.use(markdownItContainer, marker, { render: slotRender })
+      md.use(markdownItContainer, scopeMaker, { render: scopeRender })
     }
   }
 }
