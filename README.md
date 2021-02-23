@@ -39,3 +39,23 @@ $ npm i -D async-validator@1.11.5
 # OR
 $ yarn add -D async-validator@1.11.5
 ```
+
+## Code Previewer Usage
+
+💡attention: whitespace is in need before `demo`
+
+```md
+::: demo
+<div @click="handleClick">click me</div>
+
+<script>
+export default {
+  methods: {
+    handleClick() {
+      console.warn('clicked')
+    }
+  }
+}
+</script>
+:::
+```

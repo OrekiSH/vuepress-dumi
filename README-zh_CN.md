@@ -40,3 +40,23 @@ $ npm i -D async-validator@1.11.5
 # OR
 $ yarn add -D async-validator@1.11.5
 ```
+
+## 代码预览器用法
+
+💡注意: `demo`之前的空格是必需的
+
+```md
+::: demo
+<div @click="handleClick">click me</div>
+
+<script>
+export default {
+  methods: {
+    handleClick() {
+      console.warn('clicked')
+    }
+  }
+}
+</script>
+:::
+```

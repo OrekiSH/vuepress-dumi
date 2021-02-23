@@ -1,7 +1,12 @@
 <template>
   <section class="dumi-previewer">
     <div class="dumi-previewer-demo">
-      <slot name="demo"></slot>
+      <component :is="demo" />
+
+      <!-- if not Vue SFC, rollback to VuePress render, 如果不是SFC回退到VuePress渲染 -->
+      <template v-if="!demo">
+        <slot name="demo"></slot>
+      </template>
     </div>
 
     <div class="dumi-previewer-actions">
@@ -45,6 +50,10 @@
 import copy from 'copy-to-clipboard'
 import highlight from './highlight'
 
+const compiler = require('vue-template-compiler')
+const templateBlockReg = /<template>([\s\S]+)<\/template>/
+const scriptBlockReg = /<script>([\s\S]+)<\/script>/
+
 export default {
   name: 'dumi-previewer',
 
@@ -59,7 +68,13 @@ export default {
     return {
       collapsed: false,
       copied: false,
-      timerId: null
+      timerId: null,
+
+      /**
+       * take over VuePress render
+       * 接管VuePress渲染
+      */
+      demo: null,
     }
   },
 
@@ -70,6 +85,43 @@ export default {
 
     highlightCode () {
       return highlight(this.decodedCode, 'vue')
+    }
+  },
+
+  created() {
+    if (this.decodedCode) {
+      const code = this.decodedCode
+      const scriptBlock = code.match(scriptBlockReg)
+      const templateBlock = code.match(templateBlockReg)
+      /**
+       * not match Vue SFC
+       * 不符合Vue SFC定义
+       */
+      if (!scriptBlock || !templateBlock) return
+      if (!scriptBlock[1] || !templateBlock[1]) return
+
+      /**
+       * generate data/methods etc Vue options
+       * 提取data/methods等选项
+       */
+      const optionString = scriptBlock[1].trim().replace('export default ', '')
+      let option = null
+      eval(`option = ${optionString}`)
+
+      if (!this.$root.constructor) return;
+
+      /**
+       * generate render function
+       * 编译得到渲染函数
+       */
+      const renderFunc = compiler.compile(`<div>${templateBlock[1]}</div>`).render
+
+      const demoComponent = this.$root.constructor.component('demo', {
+        ...option,
+        render: new Function(renderFunc),
+      });
+      this.demo = demoComponent
+      this.$options.components.demo = demoComponent
     }
   },
 

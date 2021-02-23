@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-dumi/vuepress-plugin-dumi-previewer",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "A dumi style code previewer plugin for VuePress.",
   "keywords": [
     "vue",
@@ -29,6 +29,7 @@
   "dependencies": {
     "@vuepress/markdown": "^1.8.0",
     "copy-to-clipboard": "^3.3.1",
-    "markdown-it-container": "^3.0.0"
+    "markdown-it-container": "^3.0.0",
+    "vue-template-compiler": "^2.6.12"
   }
 }
