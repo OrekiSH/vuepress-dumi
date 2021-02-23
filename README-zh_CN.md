@@ -63,7 +63,7 @@ export default {
 
 如果你需要将代码限制在当前代码块的作用域内, 可以使用`demo[scope]`
 
-💡注意: `<template></template>`标签是必需的, 并且你不能在scope模式下使用`import`语句.
+💡注意: `<template></template>`标签是必需的, 并且你不能在scope模式下使用`import`语句。另外如果你在一个markdown文件中同时使用`demo[scope]`和`demo`，可能会出现一些报错
 
 ```md
 ::: demo[scope]

@@ -62,7 +62,7 @@ export default {
 
 If you need code scope, you can use `demo[scope]`.
 
-💡attention: `<template></template>` is in need, and you can not use `import` statment in scope mode.
+💡attention: `<template></template>` is in need, and you can not use `import` statment in scope mode. And if you use `demo[scope]` and `demo` in one markdown file, browser may print some error.
 
 ```md
 ::: demo[scope]

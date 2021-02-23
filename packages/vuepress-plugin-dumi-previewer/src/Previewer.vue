@@ -1,7 +1,7 @@
 <template>
   <section class="dumi-previewer">
     <div class="dumi-previewer-demo">
-      <template v-if="scope">
+      <template v-if="scope && demo">
         <component :is="demo" />
       </template>
 
