@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "0.3.6",
+  "version": "0.3.7",
   "workspaces": [
     "packages/*"
   ],
@@ -17,7 +17,8 @@
   },
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
-    "lintfix": "eslint --fix --ext .js,.vue ./"
+    "lintfix": "eslint --fix --ext .js,.vue ./",
+    "patch": "node_modules/.bin/lerna version patch --no-git-tag-version"
   },
   "lint-staged": {
     "*.{js,vue}": "npm run lint"

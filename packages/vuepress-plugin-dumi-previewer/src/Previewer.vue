@@ -95,7 +95,7 @@ export default {
   },
 
   created () {
-    if (this.decodedCode) {
+    if (this.decodedCode && this.scope) {
       const code = this.decodedCode
       const scriptBlock = code.match(scriptBlockReg)
       const templateBlock = code.match(templateBlockReg)
