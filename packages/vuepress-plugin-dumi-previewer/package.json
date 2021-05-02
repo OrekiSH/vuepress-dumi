@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-dumi/vuepress-plugin-dumi-previewer",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "description": "A dumi style code previewer plugin for VuePress.",
   "keywords": [
     "vue",
@@ -27,7 +27,11 @@
     "url": "https://github.com/OrekiSH/vuepress-dumi/issues"
   },
   "dependencies": {
+    "@babel/standalone": "^7.14.0",
     "@vuepress/markdown": "^1.8.0",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
     "copy-to-clipboard": "^3.3.1",
     "markdown-it-container": "^3.0.0",
     "vue-template-compiler": "^2.6.12"

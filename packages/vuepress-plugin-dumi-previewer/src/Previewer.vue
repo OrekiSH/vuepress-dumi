@@ -52,8 +52,13 @@ import copy from 'copy-to-clipboard'
 import highlight from './highlight'
 
 const compiler = require('vue-template-compiler')
+const Babel = require('@babel/standalone')
+const jsx = require('babel-plugin-transform-vue-jsx')
+
 const templateBlockReg = /<template>([\s\S]+)<\/template>/
 const scriptBlockReg = /<script>([\s\S]+)<\/script>/
+
+Babel.registerPlugin('jsx', jsx)
 
 export default {
   name: 'dumi-previewer',
@@ -110,7 +115,15 @@ export default {
        * generate data/methods etc Vue options
        * 提取data/methods等选项
        */
-      const optionString = scriptBlock[1].trim().replace('export default ', '')
+      let optionString = scriptBlock[1].trim()
+      try {
+        // compile jsx with @babel/standalone, 使用@babel/standalone编译jsx
+        optionString = Babel.transform(optionString, { plugins: ['jsx'] }).code
+      } catch (err) {
+        console.error(err)
+      }
+      optionString = optionString.replace('export default ', '')
+
       const option = null
       // eslint-disable-next-line
       eval(`option = ${optionString}`)
