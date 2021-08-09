@@ -124,7 +124,8 @@ export default {
       }
       optionString = optionString.replace('export default ', '')
 
-      const option = null
+      // eslint-disable-next-line prefer-const
+      let option = null
       // eslint-disable-next-line
       eval(`option = ${optionString}`)
 
